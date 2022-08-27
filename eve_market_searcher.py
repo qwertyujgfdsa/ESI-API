@@ -3,7 +3,7 @@ import requests
 item_sold = {}
 item_profit = {}
 
-file1 = open('/Users/william/desktop/type_ids.txt', 'r')
+file1 = open('type_ids.txt', 'r')
 items = {}
 for i in file1.readlines():
     items[i.split('|')[0]] = i.split('|')[1].split()
@@ -53,7 +53,7 @@ for type_id in items.keys():
 
     print('------ ', max_ratio, ' ', sold_volume)
     if flag:
-        f = open('/Users/william/desktop/profitables.txt', 'a')
+        f = open('items.txt', 'a')
         f.write(f'{items[type_id]} | item profit: {int(item_profit[type_id])} | items sold: {item_sold[type_id]} | sell price: {sold_price}')
         f.write('\n')
         f.close()
